@@ -1,0 +1,21 @@
+generate allure reports
+
+1. should have java and node js in the system
+2. in command prompt run to install allure globally into the system
+    "npm install -g allure-commandline"
+    add allure path into the environmental variable
+3. open powershell and check the "Get-ExecutionPolicy" as "RemoteSigned".
+    if not, enter "Set-ExecutionPolicy RemoteSigned"
+4. pip install allure-pytest from both commandline and pycharm IDE
+5. to generate the report write the command in te pycharm terminal as
+    "pytest --alluredir='./path_name'"
+6. go to the project file path in commandline and type "allure server './path_name'"
+
+Screenshot:
+1. write a command
+    allure.attach(self.driver.get_screenshot_as_png(),name="screenshot_name",attachment_type=AttachmentType.PNG)
+
+Add Severity
+1. write below decorator in each function
+    @allure.severity(allure.severity_level.severity_name)
+2. if write the decorator in above class level, so all test function have the mentioned severity.
